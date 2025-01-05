@@ -1,3 +1,19 @@
+ @php
+     $menus = [
+        (object) [
+            "title" => "Dashboard",
+            "path"  => "/",
+            "icon" => "fas fa-th",
+],
+        (object) [
+            "title" => "Product",
+            "path"  => "product",
+            "icon" => "fas fa-th", 
+],
+];
+ @endphp
+ 
+ 
  <!-- Main Sidebar Container -->
  <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
@@ -36,15 +52,18 @@
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
           
+          @foreach ($menus as $menu)
           <li class="nav-item">
-            <a href="widgets.html" class="nav-link active">
-              <i class="nav-icon fas fa-th"></i>
+            <a href="{{$menu->path[0] !== '/' ? '/' . $menu->path : $menu->path}}" class="nav-link {{request()->path() === $menu->path ? 'active' : ''}} ">
+              <i class="nav-icon  {{$menu->icon}}"></i>
               <p>
-                Dasboard
-                {{-- <span class="right badge badge-danger">New</span> --}}
+                {{$menu->title}}
               </p>
             </a>
           </li>
+              
+          @endforeach
+
          
         </ul>
       </nav>

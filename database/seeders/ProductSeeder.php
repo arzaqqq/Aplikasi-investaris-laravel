@@ -19,7 +19,7 @@ class ProductSeeder extends Seeder
             "sku" => "123-uk",
             "price" => 10000,
             "stock" => 100,
-            "category_id" => 2
+            "category_id" => 1
         ]);
 
         // Produk kedua
@@ -29,7 +29,7 @@ class ProductSeeder extends Seeder
             "sku" => "456-uk",
             "price" => 15000,
             "stock" => 50,
-            "category_id" => 2
+            "category_id" => 1
         ]);
     }
 }

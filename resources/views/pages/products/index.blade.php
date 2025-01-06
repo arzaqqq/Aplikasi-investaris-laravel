@@ -19,7 +19,10 @@
   <div class="row">
     <div class="col">
         <div class="card">
-            <div class="card-bpfy">
+            <div class="card-bpdy">
+                <div class="card-header d-flex justify-content-end">
+                    <a href="product/create" class="btn btn-sm btn-primary">Tambah data</a>
+                </div>
                 <table class="table table-bordered">
                     <thead>
                         <tr>

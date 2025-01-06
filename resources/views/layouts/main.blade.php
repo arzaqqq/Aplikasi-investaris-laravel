@@ -65,6 +65,6 @@
 <!-- AdminLTE App -->
 <script src="{{asset('templates/dist/js/adminlte.min.js')}}"></script>
 <!-- AdminLTE for demo purposes -->
-<script src="{{asset('templates/dist/js/demo.js')}}"></script>
+{{-- <script src="{{asset('templates/dist/js/demo.js')}}"></script> --}}
 </body>
 </html>

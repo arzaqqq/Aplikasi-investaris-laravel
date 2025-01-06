@@ -33,7 +33,7 @@
                             <th>Harga</th>
                             <th>Stok</th>
                             <th>Kategori</th>
-                            <th>#</th>
+                            <th>Aksi</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -46,7 +46,13 @@
                             <td>{{ $product->price }}</td>
                             <td>{{ $product->stock }}</td>
                             <td>{{ $product->category->name }}</td>
-                            <td>#</td>
+                            <td>
+                                <form action="/products/{{ $product->id }}">
+                                @csrf
+                                @method('DELETE')
+                                    <button type="submit" class="btn btn-sm btn-danger">Hapus</button>
+                                </form>
+                            </td>
                         </tr>
                         @endforeach
                     </tbody>

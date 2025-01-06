@@ -25,31 +25,61 @@
             <div class="card-body">
                 <div class="form-group">
                     <label for="name" class="form-label">Nama produk</label>
-                    <input type="text" name="name" id="" class="form-control">
+                <input
+                    type="text"
+                    name="name"
+                    id="name"
+                    class="form-control @error('name') is-invalid @enderror"
+                    value="{{ old('name') }}"
+                >
+                @error('name')
+                    <span class="invalid-feedback">{{ $message }}</span>
+                @enderror
+
                 </div>
                 <div class="form-group">
                     <label for="description" class="form-label">Deskripsi</label>
-                    <textarea type="description" name="description" id="description" cols="30" rows="10" class="form-control"></textarea>
+                    <textarea type="description" name="description" id="description" cols="30" rows="10" class="form-control"   @error('description') is-invalid @enderror"
+                    value="{{ old('description') }}"></textarea>
+                    @error('description')
+                    <span class="invalid-feedback">{{ $message }}</span>
+                @enderror
                 </div>
                 <div class="form-group">
                     <label for="sku" class="form-label">Kode produk</label>
-                    <input type="text" name="sku" id="sku" class="form-control">
+                    <input type="text" name="sku" id="sku" class="form-control  @error('sku') is-invalid @enderror"
+                    value="{{ old('sku') }}">
+                    @error('sku')
+                    <span class="invalid-feedback">{{ $message }}</span>
+                @enderror
                 </div>
                 <div class="form-group">
                     <label for="price" class="form-label">Harga</label>
-                    <input type="text" inputmode="numeric" name="price" id="price" class="form-control">
+                    <input type="text" inputmode="numeric" name="price" id="price" class="form-control @error('price') is-invalid @enderror"
+                    value="{{ old('price') }}">
+                    @error('price')
+                    <span class="invalid-feedback">{{ $message }}</span>
+                @enderror
                 </div>
                 <div class="form-group">
                     <label for="stock" class="form-label">Stok</label>
-                    <input type="text" inputmode="numeric" name="stock" id="stock" class="form-control">
+                    <input type="text" inputmode="numeric" name="stock" id="stock"  class="form-control @error('stock') is-invalid @enderror"
+                    value="{{ old('stock') }}">
+                    @error('stock')
+                    <span class="invalid-feedback">{{ $message }}</span>
+                @enderror
                 </div>
                 <div class="form-group">
                     <label for="kategori" class="form-label">Kategori</label>
-                    <select name="category_id" id="category_id" class="form-control">
-                       @foreach ($categories as $category )
-                       <option value="{{ $category->id }}">{{ $category->name }}</option>
-                       @endforeach
+                    <select name="category_id" id="category_id" class="form-control @error('category_id') is-invalid @enderror">
+                        @foreach ($categories as $category)
+                            <option value="{{ $category->id }}">{{ $category->name }}</option>
+                        @endforeach
                     </select>
+
+                @error('category_id')
+                    <span class="invalid-feedback">{{ $message }}</span>
+                @enderror
                 </div>
             </div>
             <div class="card-footer">

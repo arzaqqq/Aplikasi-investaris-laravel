@@ -15,7 +15,11 @@
     </div>
   </div>
 
-
+  @if (session('success'))
+<div class="alert alert-success">
+    {{ session('success') }}
+     </div>
+ @endif
   <div class="row">
     <div class="col">
         <div class="card">
@@ -47,11 +51,16 @@
                             <td>{{ $product->stock }}</td>
                             <td>{{ $product->category->name }}</td>
                             <td>
-                                <form action="/products/{{ $product->id }}">
+                                <div class="d-flex ">
+                                    <a href="/product/edit/{{ $product->id }}" class="btn btn-primary btn-sm mr-2">Edit</a>
+                                <form action="/product/{{ $product->id }}" method="POST">
                                 @csrf
                                 @method('DELETE')
                                     <button type="submit" class="btn btn-sm btn-danger">Hapus</button>
+
+
                                 </form>
+                                </div>
                             </td>
                         </tr>
                         @endforeach

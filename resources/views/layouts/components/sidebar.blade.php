@@ -6,6 +6,11 @@
             "icon" => "fas fa-th",
 ],
         (object) [
+            "title" => "Kategori",
+            "path"  => "/categories",
+            "icon" => "fas fa-th",
+],
+        (object) [
             "title" => "Product",
             "path"  => "product",
             "icon" => "fas fa-th",

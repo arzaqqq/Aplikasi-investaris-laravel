@@ -14,9 +14,9 @@ Route::put('product/{id}', [ProductController::class,'update']);
 Route::delete('product/{id}', [ProductController::class, 'delete']);
 
 // CATEGORY
-Route::get('/category', [CategoryController::class, 'index']);
-Route::get('category/create', [CategoryController::class,'create']);
-Route::post('category/store', [CategoryController::class,'store']);
-Route::get('category/edit/{id}', [CategoryController::class,'edit']);
-Route::put('category/{id}', [CategoryController::class,'update']);
-Route::delete('category/{id}', [CategoryController::class, 'delete']);
+Route::get('/categories', [CategoryController::class, 'index'])->name('categories.index');
+Route::get('categories/create', [CategoryController::class,'create']);
+Route::post('categories/store', [CategoryController::class,'store']);
+Route::get('categories/edit/{id}', [CategoryController::class,'edit']);
+Route::put('categories/{id}', [CategoryController::class,'update']);
+Route::delete('categories/{id}', [CategoryController::class, 'delete']);

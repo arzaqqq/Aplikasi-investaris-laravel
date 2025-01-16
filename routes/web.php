@@ -3,7 +3,10 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Controllers\Admin\DashboardController;
 
+
+route::get('/', [DashboardController::class,'index']);
 
 // PRODUCT
 Route::get('/product', [ProductController::class, 'index']);

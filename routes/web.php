@@ -1,11 +1,15 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AuthController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\DashboardController;
 
 
+Route::get("/login", [AuthController::class,"loginview"]);
+
+// DASHBOARD
 route::get('/', [DashboardController::class,'index']);
 
 // PRODUCT

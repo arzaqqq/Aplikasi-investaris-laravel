@@ -8,6 +8,7 @@ use App\Http\Controllers\Admin\DashboardController;
 
 
 Route::get("/login", [AuthController::class,"loginview"]);
+Route::post("login", [AuthController::class,"login"]);
 
 // DASHBOARD
 route::get('/', [DashboardController::class,'index']);

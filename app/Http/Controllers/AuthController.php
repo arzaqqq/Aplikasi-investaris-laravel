@@ -8,6 +8,9 @@ use Illuminate\Support\Facades\Auth;
 class AuthController extends Controller
 {
     public function loginview(){
+        if (Auth::check()){
+            return back();
+        }
         return view("pages.auth.login");
     }
 

@@ -23,7 +23,7 @@
   <div class="row">
     <div class="col">
         <div class="card">
-            <div class="card-bpdy">
+            <div class="card-body">
                 <div class="card-header d-flex justify-content-end">
                     <a href="categories/create" class="btn btn-sm btn-primary">Tambah data Kategori</a>
                 </div>
@@ -40,7 +40,7 @@
                     <tbody>
                         @foreach ($categories as $category)
                         <tr>
-                            <td>{{ $loop->iteration }}</td>
+                            <td>{{ ($categories->currentPage() - 1)* $categories->perpage() + $loop->index +1 }}</td>
                             <td>{{ $category->name }}</td>
                             <td>{{ $category->slug }}</td>
 
@@ -61,6 +61,9 @@
                     </tbody>
                 </table>
 
+            </div>
+            <div class="card-footer">
+                {{ $categories->links('pagination::bootstrap-5') }}
             </div>
         </div>
     </div>
